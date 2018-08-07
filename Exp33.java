@@ -1,9 +1,9 @@
 //super can be used to invoke parent class method
-	class Exp33{  
+	class Student16{  
 	void message(){System.out.println("welcome");}  
 	}  
 	  
-	class Student16 extends Exp33{  
+	class Exp33 extends Student16{  
 	void message(){System.out.println("welcome to java");}  
 	  
 	void display(){  
@@ -12,7 +12,7 @@
 	}  
 	  
 	public static void main(String args[]){  
-	Student16 s=new Student16();  
+	Exp33 s=new Exp33();  
 	s.display();  
 	}  
 	}  

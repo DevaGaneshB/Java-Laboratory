@@ -1,9 +1,9 @@
 //Is final method inherited?
-	class Exp38{  
+	class Honda2{  
 	  final void run(){System.out.println("running...");}  
 	}  
-	class Honda2 extends Exp38{  
+	class Exp38 extends Honda2{  
 	   public static void main(String args[]){  
-	    new Honda2().run();  
+	    new Exp38().run();  
 	   }  
 	}  
