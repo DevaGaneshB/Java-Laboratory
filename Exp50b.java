@@ -1,4 +1,4 @@
-	package mypack;  
+
 	import pack.*;  
 
 public class Exp50b {
