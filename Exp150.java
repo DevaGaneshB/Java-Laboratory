@@ -4,7 +4,7 @@
 	
 public class Exp150 {
 	  public class CharArrayWriterExample {  
-	public static void main(String args[])throws Exception{    
+	public   void main(String args[])throws Exception{    
 	          CharArrayWriter out=new CharArrayWriter();    
 	          out.write("Sachin...Sachin...");    
 	          FileWriter f1=new FileWriter("F:\\Java man exp\\Exp150f1.txt");    
