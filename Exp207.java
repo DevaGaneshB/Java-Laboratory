@@ -1,6 +1,5 @@
-	import java.applet.Applet;  
-	import java.awt.Graphics;  
-	  
+import java.applet.Applet;  
+import java.awt.Graphics;  
 public  class Exp207 extends Applet {
 
 	
@@ -9,6 +8,9 @@ public  class Exp207 extends Applet {
 	String str=getParameter("msg");  
 	g.drawString(str,50, 50);  
 	}  
+	public static void main(String args[]) {
+		
+	}
 	  
 	}  
 

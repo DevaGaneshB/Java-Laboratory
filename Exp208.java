@@ -1,7 +1,8 @@
-import java.applet.*;  
+import java.applet.*; 
+ 
 	import java.awt.*;  
 	import java.awt.event.*;  
-	
+	import java.applet.AppletContext;
 public class Exp208 extends Applet implements ActionListener{
 	
 	Button b;  
@@ -16,9 +17,11 @@ public class Exp208 extends Applet implements ActionListener{
 	  
 	public void actionPerformed(ActionEvent e){  
 	  
-	Exp208 ctx=getAppletContext();  
+	AppletContext ctx=getAppletContext();  
 	Applet a=ctx.getApplet("app2");  
 	a.setBackground(Color.yellow);  
 	}  
-	
+public static void main(String args[]) {
+		
+	}
 }
