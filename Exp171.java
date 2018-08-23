@@ -1,4 +1,5 @@
 import java.awt.*;  
+
 	import java.awt.event.*;  
 	
 public class Exp171 extends Frame implements ActionListener {
@@ -19,10 +20,12 @@ public class Exp171 extends Frame implements ActionListener {
 	add(b);add(tf);  
 	setSize(300,300);  
 	setLayout(null);  
-	setVisible(true);  
+	setVisible(true); 
+	
 	}  
 	public void actionPerformed(ActionEvent e){  
 	tf.setText("Welcome");  
+	
 	}  
 	public static void main(String args[]){  
 	new Exp171();  

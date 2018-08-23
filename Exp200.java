@@ -1,4 +1,5 @@
-import java.awt.*;  
+import java.awt.*; 
+ 
 	import java.applet.*;  
 	  
 	  
@@ -12,7 +13,7 @@ public class Exp200 extends Applet{
 	  }  
 	    
 	  public void paint(Graphics g) {  
-	    g.drawImage(picture, 30,30, this);  
+	    g.drawImage(picture, 60,60, this);  
 	  }  
 	      
 	 

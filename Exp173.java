@@ -3,7 +3,10 @@ import javax.swing.*;
 public class Exp173 {
 	Exp173(){    
 	JFrame f=new JFrame("Button Example");            
-	JButton b=new JButton(new ImageIcon("‪‪download.jpg"));    
+	    
+	  ImageIcon img  = new ImageIcon("reg.PNG");
+	  JButton b=new JButton(img);
+	  
 	b.setBounds(100,100,100, 40);    
 	f.add(b);    
 	f.setSize(300,400);    

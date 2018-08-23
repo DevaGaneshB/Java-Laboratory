@@ -12,7 +12,7 @@ public class Exp201 extends Applet  {
 	    
 	  public void paint(Graphics g) {  
 	    for(int i=0;i<500;i++){  
-	      g.drawImage(picture, i,30, this);  
+	      g.drawImage(picture, i,10, this);  
 	  
 	      try{Thread.sleep(100);}catch(Exception e){}  
 	    }  

@@ -11,8 +11,8 @@ public class Exp176 {
 	    area=new JTextArea(300,300);  
 	    area.setBounds(10,30,300,300);  
 	      
-	    area.setBackground(Color.black);  
-	    area.setForeground(Color.white);  
+	    area.setBackground(Color.blue);  
+	    area.setForeground(Color.pink);  
 	          
 	    f.add(area);  
 	      
