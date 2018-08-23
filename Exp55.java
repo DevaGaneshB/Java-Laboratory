@@ -1,7 +1,7 @@
+package stud;
 
-//Encapsulation in Java
-	//save as Student.java  
-	 public class Student1{  
+public class Exp55 {
+	 
 		private String name;  
 		   
 		public String getName(){  
@@ -9,6 +9,6 @@
 		}  
 		public void setName(String name){  
 		this.name=name;  
-		}
-	 }
-	
+		}  
+
+}
