@@ -1,0 +1,88 @@
+package com.example.admin.proximity;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.VibrationEffect;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.os.Vibrator;
+
+
+
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
+    private TextView data;
+    private SensorManager sensorManager;
+    private Sensor myProximitySensor;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        data=(TextView) findViewById(R.id.data);
+        sensorManager=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        myProximitySensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        sensorManager.registerListener((SensorEventListener)this,myProximitySensor,SensorManager.SENSOR_DELAY_NORMAL);
+
+    }
+    @Override
+    public void onSensorChanged(SensorEvent event){
+        {
+            if(event.values[0]==0){
+                data.setText("NEAR");
+                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                getWindow().getDecorView().setBackgroundColor(Color.RED);
+                v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            }
+            else{
+                data.setText("FAR");
+                getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+
+            }
+        }
+
+    }
+    @Override
+    public void onAccuracyChanged(Sensor sensor,int accuracy){
+
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+         />
+
+</LinearLayout>

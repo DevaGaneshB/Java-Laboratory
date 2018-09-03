@@ -1,0 +1,74 @@
+package com.example.admin.pro_accelometer;
+
+
+import android.content.Context;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.VibrationEffect;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+
+
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
+    private TextView data;
+    private SensorManager sensorManager;
+    private Sensor myProximitySensor;
+
+    private Sensor accelerometerSensor1;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        data=(TextView) findViewById(R.id.data);
+
+        sensorManager=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        myProximitySensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        accelerometerSensor1=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener((SensorEventListener)this,myProximitySensor,SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this,accelerometerSensor1,SensorManager.SENSOR_DELAY_NORMAL);
+
+
+
+    }
+    @Override
+    public void onSensorChanged(SensorEvent event){
+        {
+            if(event.values[0]==0){
+
+                float x=event.values[0];
+                float y=event.values[1];
+                float z=event.values[2];
+
+                StringBuilder sb=new StringBuilder().append("x=").append(x).append("\n");
+
+                getWindow().getDecorView().setBackgroundColor(Color.RED);
+
+                    sb.append("y=").append(y).append("\n");
+                    sb.append("z=").append(z).append("\n");
+                    data.setText(sb.toString());
+                }
+
+            else{
+                data.setText("FAR");
+                getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+
+            }
+        }
+
+    }
+    @Override
+    public void onAccuracyChanged(Sensor sensor,int accuracy){
+
+    }
+};
+
+
